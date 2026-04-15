@@ -1,15 +1,15 @@
 quarkus:
+  flyway:
+    migrate-at-start: true
   datasource:
     db-kind: mssql
     username: sa
-    password: PutaquePariu24
+    password: 'PutaquePariu24'
     jdbc:
       driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-      url: jdbc:sqlserver://sqlserver:1433;databaseName=quarkus_social;encrypt=false;trustServerCertificate=true;createDatabaseIfNotExist=true
-    max-size: 16
+      url: jdbc:sqlserver://localhost:1433;databaseName=quarkus_social;encrypt=false;trustServerCertificate=true;createDatabaseIfNotExist=true
+      max-size: 16
   hibernate-orm:
     database:
-      generation: update
-    schema-management:
-      strategy: update
+      generation: none
 
