@@ -1,6 +1,8 @@
 
 package luciano.quarkusssocial.rest.model;
 
+import com.sun.istack.NotNull;
+
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -16,12 +18,16 @@ public class User extends PanacheEntityBase {
   public User() {
   }
 
+  @NotNull
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   public Long id;
 
+  @NotNull
   @Column(name = "name", length = 500)
   private String name;
+
+  @NotNull
   @Column(name = "age")
   private Integer age;
 
